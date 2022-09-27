@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    height: 100vh;
+    border-right: 4px solid yellow;
+}
+
+#app {
+    height: 100vh;
+    border-right: 4px solid #2a2ad9;
+}
+
+.to-do-list-side-bar {
+    height: 100vh;
+}
+
+.border-radius {
+    border-radius: 5px
+}
