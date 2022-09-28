@@ -4,8 +4,8 @@
 
     <span :class="[{ ['line-through']: isDone }, 'w-1/3']"> {{i + 1}}. {{name}} </span>
 
-    <img src="../assets/edit-icon.svg" alt="edit-icon" @click="showEditInput(id, name)" class="w-8 mx-2">
-    <img src="../assets/delete-icon.svg" alt="delete-icon" @click="store.removeTask(id)" class="mx-2">
+    <img src="../assets/icons/edit.svg" alt="edit-icon" @click="showEditInput(id, name)" class="w-8 mx-2">
+    <img src="../assets/icons/delete.svg" alt="delete-icon" @click="store.removeTask(id)" class="mx-2">
   </div>
 </template>
 

@@ -5,7 +5,7 @@
         <li> {{ name }} </li>
       </RouterLink>
 
-      <img v-if="i" src="../assets/delete-icon.svg" alt="delete-icon" class="mx-2" @click="removeList(id)">
+      <img v-if="i" src="../assets/icons/delete.svg" alt="delete-icon" class="mx-2" @click="removeList(id)">
     </div>
 
     <div class="mt-5">

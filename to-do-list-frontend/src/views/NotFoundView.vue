@@ -1,3 +1,3 @@
 <template>
-  <img src="../assets/not-found.png" alt="not-found">
+  <img src="../assets/images/not-found.png" alt="not-found">
 </template>
