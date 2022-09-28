@@ -43,9 +43,9 @@
   const router = useRouter();
 
   const tasksSelector = [
-    { id: 1, name: 'in progress', icon: '/src/assets/unselected-checkbox.svg' },
-    { id: 2, name: 'done', icon: '/src/assets/selected-checkbox.svg' },
-    { id: 3, name: 'all', icon: '/src/assets/all.svg' },
+    { id: 1, name: 'in progress', icon: '/src/assets/icons/unselected-checkbox.svg' },
+    { id: 2, name: 'done', icon: '/src/assets/icons/selected-checkbox.svg' },
+    { id: 3, name: 'all', icon: '/src/assets/icons/all.svg' },
   ];
   const selectedTasks = ref(tasksSelector[2]);
 

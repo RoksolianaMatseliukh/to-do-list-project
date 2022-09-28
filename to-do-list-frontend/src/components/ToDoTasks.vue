@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
   import { storeToRefs } from "pinia";
-  import axios from "axios";
 
   import { useToDoStore } from "@/stores/toDo";
 
