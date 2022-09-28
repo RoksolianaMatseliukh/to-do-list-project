@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 
-import { customStatuses, ErrorHandler} from '../errors';
+import { customStatuses, ErrorHandler } from '../errors';
 
 class ErrorController {
     public errorCatcher(err: ErrorHandler, _: Request, res: Response, __: NextFunction): void {
