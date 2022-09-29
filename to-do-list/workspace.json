@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "to-do-list-frontend": "apps/to-do-list-frontend",
+    "to-do-list-server": "apps/to-do-list-server"
+  }
+}

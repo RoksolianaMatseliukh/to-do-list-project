@@ -1,0 +1,22 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+   provider = "prisma-client-js"
+}
+
+model List {
+  id      Int      @id @default(autoincrement())
+  name    String   @db.VarChar(255)
+  tasks   Task[]
+}
+
+model Task {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(255)
+  isDone    Boolean  @default(false)
+  listId    Int
+  list      List     @relation(fields: [listId], references: [id], onDelete: Cascade)
+}
