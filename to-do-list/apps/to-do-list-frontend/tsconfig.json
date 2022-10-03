@@ -13,7 +13,8 @@
       "@assets/*": ["./src/assets/*"],
       "@app/*": ["./src/app/*"],
       "@public/*": ["./src/public/*"]
-    }
+    },
+    "types": ["vite/client"]
   },
   "references": [
     {

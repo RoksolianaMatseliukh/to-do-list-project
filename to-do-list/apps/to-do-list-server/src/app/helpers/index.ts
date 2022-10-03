@@ -1,10 +1,11 @@
 import { prisma } from '../prisma';
 import { customMessages } from '../errors';
+import { IList } from '../types';
 
 class Helpers {
   public async createFirstListIfItDoesntExist(): Promise<void> {
     try {
-      const list = await prisma.list.findFirst();
+      const list: IList | null = await prisma.list.findFirst();
 
       if (list) {
         console.log(customMessages.ENTITY_ALREADY_EXISTS);

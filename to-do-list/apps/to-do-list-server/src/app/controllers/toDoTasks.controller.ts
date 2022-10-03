@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
 
 import { prisma } from '../prisma';
+import { ITask } from '../types';
 
 class ToDoTasksController {
   public async getAll(_: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const toDoTasks = await prisma.task.findMany();
+      const toDoTasks: ITask[] = await prisma.task.findMany();
 
       res.json(toDoTasks);
     } catch (e: any) {
@@ -15,7 +16,7 @@ class ToDoTasksController {
 
   public async create(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const newTask = await prisma.task.create({ data: req.body });
+      const newTask: ITask = await prisma.task.create({ data: req.body });
 
       res.json(newTask);
     } catch (e: any) {
@@ -27,7 +28,7 @@ class ToDoTasksController {
     try {
       const { body: { name }, params: { taskId } } = req;
 
-      const updatedTask = await prisma.task.update({
+      const updatedTask: ITask = await prisma.task.update({
         where: { id: +taskId },
         data: { name }
       });
@@ -42,7 +43,7 @@ class ToDoTasksController {
     try {
       const { isDone, params: { taskId } } = req;
 
-      const updatedTask = await prisma.task.update({
+      const updatedTask: ITask = await prisma.task.update({
         where: { id: +taskId },
         data: { isDone: !isDone }
       });
@@ -57,7 +58,7 @@ class ToDoTasksController {
     try {
       const { taskId } = req.params;
 
-      const { id } = await prisma.task.delete({
+      const { id }: ITask = await prisma.task.delete({
         where: { id: +taskId }
       });
 

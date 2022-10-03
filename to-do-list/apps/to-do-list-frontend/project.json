@@ -10,10 +10,7 @@
       }
     },
     "serve": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "vite"
-      }
+      "executor": "nx-vue3-vite:dev-server"
     },
     "e2e": {
       "executor": "nx-vue3-vite:cypress",
