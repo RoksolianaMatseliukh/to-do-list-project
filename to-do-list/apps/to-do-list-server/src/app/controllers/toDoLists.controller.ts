@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
 
 import { prisma } from '../prisma';
-import { IList } from '../types';
+import { List } from '../../../../../libs/types';
 
 class ToDoListsController {
   public async getAll(_: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const toDoLists: IList[] = await prisma.list.findMany();
+      const toDoLists: List[] = await prisma.list.findMany();
 
       res.json(toDoLists);
     } catch (e: any) {
@@ -16,7 +16,7 @@ class ToDoListsController {
 
   public async create(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const newList: IList = await prisma.list.create({ data: req.body });
+      const newList: List = await prisma.list.create({ data: req.body });
 
       res.json(newList);
     } catch (e: any) {
@@ -28,7 +28,7 @@ class ToDoListsController {
     try {
       const { listId } = req.params;
 
-      const { id }: IList = await prisma.list.delete({
+      const { id }: List = await prisma.list.delete({
         where: { id: +listId }
       });
 

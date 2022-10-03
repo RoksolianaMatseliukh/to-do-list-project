@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
 
-import type { Task } from "../types";
+import type { Task } from "../../../../../libs/types";
 import { API_URL } from "../utils/config";
 
 export const useToDoStore = defineStore('toDo', () => {

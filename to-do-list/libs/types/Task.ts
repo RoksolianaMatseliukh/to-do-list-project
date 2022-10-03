@@ -3,4 +3,4 @@ export type Task = {
   name: string;
   isDone: boolean;
   listId: number;
-}
+};

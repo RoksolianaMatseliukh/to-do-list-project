@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { onMounted, ref } from "vue";
 import axios from "axios";
 
-import type { List } from "../types";
+import type { List } from "../../../../../libs/types";
 import { API_URL } from "../utils/config";
 
 export const useToDoListStore = defineStore('toDoList', () => {

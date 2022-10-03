@@ -4,7 +4,7 @@ import * as Joi from 'joi';
 import { prisma } from '../prisma';
 import { customMessages, ErrorHandler } from '../errors';
 import { constants } from '../constants';
-import { IList, ITask } from '../types';
+import { List, Task } from '../../../../../libs/types';
 
 class CommonMiddlewares {
   public checkIsEntityValid(validator: Joi.ObjectSchema) {
@@ -39,7 +39,7 @@ class CommonMiddlewares {
           return;
         }
 
-        const entityById: IList | ITask = await (prisma as any)[entity].findUnique({
+        const entityById: List | Task = await (prisma as any)[entity].findUnique({
           where: { id: +id }
         });
 
@@ -50,7 +50,7 @@ class CommonMiddlewares {
           return;
         }
 
-        req.isDone = (entityById as ITask).isDone;
+        req.isDone = (entityById as Task).isDone;
         next();
       } catch (e: any) {
         next(e);
